@@ -24,7 +24,7 @@ docker run -d \
   vaultwarden/server:latest
 ```
 
-Go ahead and run it. Then open [http://localhost:8080](http://localhost:8080) and create an account.
+Go ahead and run it. Then open [http://localhost:8080](http://localhost:8080), you do not need to create an account.
 
 The admin page is [http://localhost:8080/admin](http://localhost:8080/admin). Unlock it with the token from `-e ADMIN_TOKEN`.
 
