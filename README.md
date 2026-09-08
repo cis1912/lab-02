@@ -79,12 +79,12 @@ docker compose up -d
 
 [http://localhost:8080](http://localhost:8080) should work.
 
-`docker compose config` will print the rendered file. If `ADMIN_TOKEN` is written in the YAML, you would be committing it. This is not good, lets fix it!
+`docker compose config` will print the rendered file. If `ADMIN_TOKEN` is written directly in the YAML, you would be committing it. This is not good, lets fix it!
 
 ## Exercise 2: Compose secrets
 
-`-e ADMIN_TOKEN=...` and `environment: ADMIN_TOKEN: ...` both land in `Env`. There is a better approach, we mentioned it in lecture!
+`-e ADMIN_TOKEN=...` and `environment: ADMIN_TOKEN: ...` both land in `Env`. There is a better approach and we mentioned it in lecture!
 
-HINT: Vaultwarden can load the token from a file. Set the **environment variable** `ADMIN_TOKEN_FILE` to the path of that file (Compose mounts secrets under `/run/secrets/`).
+HINT: Vaultwarden can load the token from a file. Set the **environment variable** `ADMIN_TOKEN_FILE` to the path of that file (Compose mounts secrets under `/run/secrets/`). This is better because we can add that file to the gitignore.
 
 When you are done, [http://localhost:8080/admin](http://localhost:8080/admin) should still unlock with the token, and `docker inspect` should no longer print it.
